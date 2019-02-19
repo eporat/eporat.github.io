@@ -21,17 +21,17 @@ function setup(){
 
   rules = loadImage('rules.png');
   rulesDiv = createDiv('')
-  rulesDiv.html(`<p>Controls:<br>
-  BLUE UP : w<br>
-  BLUE DOWN: s<br>
-  BLUE LEFT: a<br>
-  BLUE RIGHT: d<br>
-  RED UP : up arrow<br>
-  RED DOWN: down arrow<br>
-  RED LEFT: left arrow<br>
-  RED RIGHT: right arrow<br>
-  ROTATE WALL: space<br>
-  PLACE WALL: mouse click<br></p>`)
+  rulesDiv.html(`<p>CONTROLS:<br>
+  BLUE UP : W<br>
+  BLUE DOWN: S<br>
+  BLUE LEFT: A<br>
+  BLUE RIGHT: D<br>
+  RED UP : UP ARROW<br>
+  RED DOWN: DOWN ARROW<br>
+  RED LEFT: LEFT ARROW<br>
+  RED RIGHT: RIGHT ARROW<br>
+  ROTATE WALL: SPACE<br>
+  PLACE WALL: MOUSE CLICK<br></p>`)
   rulesDiv.addClass("rules");
 }
 

@@ -4,7 +4,9 @@ let gameover = false;
 let orientation = 'horizontal'
 let size;
 let SQUARE_SIZE, OFFSET_X, OFFSET_Y;
-
+let rules;
+let displayRules = false;
+let rulesDiv;
 function setup(){
   size = min(windowWidth, windowHeight);
   console.log(size);
@@ -17,7 +19,20 @@ function setup(){
   OFFSET_X =    0.3 * size;
   OFFSET_Y =    0.3 * size;
 
-  alert("Press space to rotate wall");
+  rules = loadImage('rules.png');
+  rulesDiv = createDiv('')
+  rulesDiv.html(`<p>Controls:<br>
+  BLUE UP : w<br>
+  BLUE DOWN: s<br>
+  BLUE LEFT: a<br>
+  BLUE RIGHT: d<br>
+  RED UP : up arrow<br>
+  RED DOWN: down arrow<br>
+  RED LEFT: left arrow<br>
+  RED RIGHT: right arrow<br>
+  ROTATE WALL: space<br>
+  PLACE WALL: mouse click<br></p>`)
+  rulesDiv.addClass("rules");
 }
 
 function windowResized() {
@@ -37,6 +52,18 @@ function draw(){
   let c = turn === 1 ? color(0, 0, 255, 255) : color(255, 0, 0, 255);
   fill(c);
   ellipse(size * 0.5, size * 0.2, size * 0.05 * sin(frameCount * 0.05))
+
+  image(rules, size * 0.8, size * 0.8, size * 0.1, size * 0.1)
+
+  //BETTER WAY OF DOING THIS
+  displayRules = (mouseX >= size * 0.8 && mouseX <= size * 0.9 && mouseY >= size * 0.8 && mouseY <= size * 0.9);
+
+  if (displayRules){
+    rulesDiv.show();
+  } else {
+    rulesDiv.hide();
+  }
+  
 }
 
 function keyPressed(){

@@ -263,11 +263,11 @@ class Board {
         turn = turn === 1 ? 2 : 1;
 
         if (this.player1.row === this.size - 1){
-            alert("Player 1 Won!")
+            alert("Blue Won!")
             gameover = true;
             noLoop();
         } else if (this.player2.row === 0){
-            alert("Player 2 Won!")
+            alert("Red Won!")
             gameover = true;
             noLoop();
         }

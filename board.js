@@ -200,10 +200,10 @@ class Board {
             if (this.hasWall(row+drow, col+dcol, direction)){
                 if (direction == 'up' || direction === 'down'){
                     let possibleDirections = [];
-                    if (!this.outOfBounds(player.row + drow, player.col + dcol - 1) && !this.hasWall(player.row + drow, player.col + dcol - 1, 'left')){
+                    if (!this.outOfBounds(player.row + drow, player.col - 1) && !this.hasWall(otherPlayer.row, otherPlayer.col, 'left')){
                         possibleDirections.push('left')
                     }
-                    if (!this.outOfBounds(player.row + drow, player.col + dcol + 1) && !this.hasWall(player.row + drow, player.col + dcol + 1, 'right')){
+                    if (!this.outOfBounds(player.row + drow, player.col + 1) && !this.hasWall(otherPlayer.row, otherPlayer.col, 'right')){
                         possibleDirections.push('right')
                     }
 
@@ -226,10 +226,10 @@ class Board {
 
                 } else {
                     let possibleDirections = [];
-                    if (!this.outOfBounds(player.row + drow - 1, player.col + dcol) && !this.hasWall(player.row + drow - 1, player.col + dcol, 'up')){
+                    if (!this.outOfBounds(player.row - 1, player.col + dcol) && !this.hasWall(otherPlayer.row, otherPlayer.col, 'up')){
                         possibleDirections.push('up')
                     }
-                    if (!this.outOfBounds(player.row + drow + 1, player.col + dcol) && !this.hasWall(player.row + drow + 1, player.col + dcol, 'down')){
+                    if (!this.outOfBounds(player.row + 1, player.col + dcol) && !this.hasWall(otherPlayer.row, otherPlayer.col, 'down')){
                         possibleDirections.push('down')
                     }
 

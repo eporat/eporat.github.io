@@ -3,7 +3,7 @@ function pathExists(point, targetRow){
     const visited = new Set();
 
     while (queue.length !== 0){
-        let [row, col] = queue.shift();
+        let [row, col] = queue.pop();
 
         visited.add(`${row}, ${col}`);
 
@@ -17,7 +17,7 @@ function pathExists(point, targetRow){
                 if (row + drow === targetRow){
                     return true;
                 }
-                queue.unshift([row + drow, col + dcol]);
+                queue.push([row + drow, col + dcol]);
             }
         }
     }
